@@ -1,8 +1,7 @@
-from flask import Flask,g, jsonify
+from flask import Flask,g, jsonify,request
 from flask_pymongo import PyMongo
 from database import importData
-import os
-import json
+
 app = Flask(__name__)
 
 
@@ -23,7 +22,20 @@ def before_request():
 @app.route('/')
 def index():
 	return jsonify({'message': 'howdy'})
-# Before req@uest
+
+@app.route('/filterData', methods=['POST','GET'])
+def filterData():
+	lat=request.form['lat']
+	lon=request.form['lon']
+	city=request.form['city']
+	services=request.form['services']
+	specializations=request.form['specializations']
+
+	filteredHospitals = g.db.hospitalList.find({"$and":[{"city":city},{"specializations":specializations}]})
+
+	return jsonify(list(filteredHospitals))
+
+
 # Afterrequest teardown
 # route( root)
 
