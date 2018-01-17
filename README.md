@@ -42,7 +42,7 @@ click  **Send**  to get a response json having a list of all the filtered Hospit
 
 ## Future Plan
 This project is maintained in trello. 
-Please watch the **hospitalFinder** list in  [this](https://trello.com/b/aoHBdMcM) board for the future work planned 
+Please watch the **hospitalFinder** list in  [this](https://trello.com/b/0xg2Ti4g/hospitalfinder) board for the future work planned 
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
